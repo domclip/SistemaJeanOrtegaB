@@ -36,6 +36,7 @@ public class JfrmJoMenus extends javax.swing.JFrame {
         jMniClientes = new javax.swing.JMenuItem();
         jMniFornecedores = new javax.swing.JMenuItem();
         jMniLivros = new javax.swing.JMenuItem();
+        jMniAutor = new javax.swing.JMenuItem();
         jMnuMovimento = new javax.swing.JMenu();
         jMnuVenda = new javax.swing.JMenuItem();
         jMnuCompra = new javax.swing.JMenuItem();
@@ -45,6 +46,7 @@ public class JfrmJoMenus extends javax.swing.JFrame {
         jMnuCadastro.setText("Cadastro");
 
         jMniUsuarios.setText("Usuarios");
+        jMniUsuarios.addActionListener(this::jMniUsuariosActionPerformed);
         jMnuCadastro.add(jMniUsuarios);
 
         jMniClientes.setText("Clientes");
@@ -58,6 +60,10 @@ public class JfrmJoMenus extends javax.swing.JFrame {
         jMniLivros.setText("Livros");
         jMniLivros.addActionListener(this::jMniLivrosActionPerformed);
         jMnuCadastro.add(jMniLivros);
+
+        jMniAutor.setText("Autor");
+        jMniAutor.addActionListener(this::jMniAutorActionPerformed);
+        jMnuCadastro.add(jMniAutor);
 
         jMenuBar1.add(jMnuCadastro);
 
@@ -90,19 +96,34 @@ public class JfrmJoMenus extends javax.swing.JFrame {
 
     private void jMniClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMniClientesActionPerformed
         // TODO add your handling code here:
+         new JDlgJoClientes(this, true).setVisible(true);
     }//GEN-LAST:event_jMniClientesActionPerformed
 
     private void jMniFornecedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMniFornecedoresActionPerformed
         // TODO add your handling code here:
+         new JDlgJoFornecedor(this, true).setVisible(true);
     }//GEN-LAST:event_jMniFornecedoresActionPerformed
 
     private void jMniLivrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMniLivrosActionPerformed
         // TODO add your handling code here:
+         new JDlgJoLivros(this, true).setVisible(true);
     }//GEN-LAST:event_jMniLivrosActionPerformed
 
     private void jMnuVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuVendaActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jMnuVendaActionPerformed
+
+    private void jMniUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMniUsuariosActionPerformed
+        // TODO add your handling code here:
+        new JDlgJoUsuarios(this, true).setVisible(true);
+    }//GEN-LAST:event_jMniUsuariosActionPerformed
+
+    private void jMniAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMniAutorActionPerformed
+        // TODO add your handling code here:
+         new JDlgJoAutor(this, true).setVisible(true);
+        
+    }//GEN-LAST:event_jMniAutorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -131,6 +152,7 @@ public class JfrmJoMenus extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMniAutor;
     private javax.swing.JMenuItem jMniClientes;
     private javax.swing.JMenuItem jMniFornecedores;
     private javax.swing.JMenuItem jMniLivros;
