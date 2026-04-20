@@ -20,7 +20,34 @@ public class JDlgJoFornecedor extends javax.swing.JDialog {
         initComponents();
           setLocationRelativeTo(null);
          setTitle("Cadastro de Fornecedor");
+         habilitar(false);
     }
+      public void habilitar(boolean valor) {
+        jTxtNome.setEnabled(valor);
+        jFmtCep.setEnabled(valor);
+        jFmtCnpj.setEnabled(valor);
+        jFmtDatacadastro.setEnabled(valor);
+        jFmtTelefone.setEnabled(valor);
+        jTxtEmail.setEnabled(valor);
+        jTxtEndereco.setEnabled(valor);
+        jTxtBairro.setEnabled(valor);
+        jTxtCidade.setEnabled(valor);
+        jTxtEstado.setEnabled(valor);
+        jFmtContatoresponsavel.setEnabled(valor);
+        jTxtCategoriaproduto.setEnabled(valor);
+        jTxtPrazoentrega.setEnabled(valor);
+        
+        
+       
+        jBtnCancelar.setEnabled(valor);
+        jBtnConfirmar.setEnabled(valor);
+        
+        jBtnPesquisar.setEnabled(!valor);
+        jBtnExcluir.setEnabled(!valor);
+        jBtnIncluir.setEnabled(!valor);
+        jBtnAlterar.setEnabled(!valor);
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -79,6 +106,8 @@ public class JDlgJoFornecedor extends javax.swing.JDialog {
 
         jLblContatoresponsavel.setText("Contato responsavel");
 
+        jFmtTelefone.addActionListener(this::jFmtTelefoneActionPerformed);
+
         jLblEndereco.setText("Endereco");
 
         jLblBairro.setText("Bairro");
@@ -97,18 +126,22 @@ public class JDlgJoFornecedor extends javax.swing.JDialog {
 
         jBtnIncluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/incluir.png"))); // NOI18N
         jBtnIncluir.setText("Incluir");
+        jBtnIncluir.addActionListener(this::jBtnIncluirActionPerformed);
 
         jBtnAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/alterar.png"))); // NOI18N
         jBtnAlterar.setText("Alterar");
+        jBtnAlterar.addActionListener(this::jBtnAlterarActionPerformed);
 
         jBtnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Excluir.png"))); // NOI18N
         jBtnExcluir.setText("Excluir");
 
         jBtnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ok.png"))); // NOI18N
         jBtnConfirmar.setText("Confirmar");
+        jBtnConfirmar.addActionListener(this::jBtnConfirmarActionPerformed);
 
         jBtnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cancelar.png"))); // NOI18N
         jBtnCancelar.setText("Cancelar");
+        jBtnCancelar.addActionListener(this::jBtnCancelarActionPerformed);
 
         jBtnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/pesquisar.png"))); // NOI18N
         jBtnPesquisar.setText("Pesquisar");
@@ -257,6 +290,30 @@ public class JDlgJoFornecedor extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jFmtTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFmtTelefoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFmtTelefoneActionPerformed
+
+    private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
+        // TODO add your handling code here:
+        habilitar(true);
+    }//GEN-LAST:event_jBtnIncluirActionPerformed
+
+    private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
+        // TODO add your handling code here:
+          habilitar(true);
+    }//GEN-LAST:event_jBtnAlterarActionPerformed
+
+    private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
+        // TODO add your handling code here:
+          habilitar(false);
+    }//GEN-LAST:event_jBtnConfirmarActionPerformed
+
+    private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
+        // TODO add your handling code here:
+          habilitar(false);
+    }//GEN-LAST:event_jBtnCancelarActionPerformed
 
     /**
      * @param args the command line arguments

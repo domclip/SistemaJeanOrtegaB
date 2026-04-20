@@ -20,6 +20,34 @@ public class JDlgJoClientes extends javax.swing.JDialog {
         initComponents();
           setLocationRelativeTo(null);
          setTitle("Cadastro de cliente");
+         habilitar(false);
+    }
+     public void habilitar(boolean valor) {
+        jTxtNome.setEnabled(valor);
+        jFmtCep.setEnabled(valor);
+        jFmtCpf.setEnabled(valor);
+        jFmtDatacadastro.setEnabled(valor);
+        jFmtDatanascimento.setEnabled(valor);
+        jFmtTelefone.setEnabled(valor);
+        jFmtValorcompras.setEnabled(valor);
+        jTxtEmail.setEnabled(valor);
+        jRbtnHomem.setEnabled(valor);
+        jRbtnMulher.setEnabled(valor);
+        jRbtnNaobinario.setEnabled(valor);
+        jTxtEndereco.setEnabled(valor);
+        jTxtBairro.setEnabled(valor);
+        jTxtCidade.setEnabled(valor);
+        jTxtEstado.setEnabled(valor);
+        
+        
+       
+        jBtnCancelar.setEnabled(valor);
+        jBtnConfirmar.setEnabled(valor);
+        
+        jBtnPesquisar.setEnabled(!valor);
+        jBtnExcluir.setEnabled(!valor);
+        jBtnIncluir.setEnabled(!valor);
+        jBtnAlterar.setEnabled(!valor);
     }
 
     /**
@@ -111,18 +139,22 @@ public class JDlgJoClientes extends javax.swing.JDialog {
 
         jBtnIncluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/incluir.png"))); // NOI18N
         jBtnIncluir.setText("Incluir");
+        jBtnIncluir.addActionListener(this::jBtnIncluirActionPerformed);
 
         jBtnAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/alterar.png"))); // NOI18N
         jBtnAlterar.setText("Alterar");
+        jBtnAlterar.addActionListener(this::jBtnAlterarActionPerformed);
 
         jBtnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Excluir.png"))); // NOI18N
         jBtnExcluir.setText("Excluir");
 
         jBtnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ok.png"))); // NOI18N
         jBtnConfirmar.setText("Confirmar");
+        jBtnConfirmar.addActionListener(this::jBtnConfirmarActionPerformed);
 
         jBtnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cancelar.png"))); // NOI18N
         jBtnCancelar.setText("Cancelar");
+        jBtnCancelar.addActionListener(this::jBtnCancelarActionPerformed);
 
         jBtnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/pesquisar.png"))); // NOI18N
         jBtnPesquisar.setText("Pesquisar");
@@ -245,10 +277,10 @@ public class JDlgJoClientes extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLblCidade)
+                    .addComponent(jLblDatacadastro)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLblEstado)
-                        .addComponent(jLblCep)
-                        .addComponent(jLblDatacadastro)))
+                        .addComponent(jLblCep)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTxtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -284,6 +316,26 @@ public class JDlgJoClientes extends javax.swing.JDialog {
     private void jFmtValorcomprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFmtValorcomprasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jFmtValorcomprasActionPerformed
+
+    private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
+        // TODO add your handling code here:
+        habilitar(true);
+    }//GEN-LAST:event_jBtnIncluirActionPerformed
+
+    private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
+        // TODO add your handling code here:
+         habilitar(true);
+    }//GEN-LAST:event_jBtnAlterarActionPerformed
+
+    private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
+        // TODO add your handling code here:
+         habilitar(false);
+    }//GEN-LAST:event_jBtnConfirmarActionPerformed
+
+    private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
+        // TODO add your handling code here:
+         habilitar(false);
+    }//GEN-LAST:event_jBtnCancelarActionPerformed
 
     /**
      * @param args the command line arguments
