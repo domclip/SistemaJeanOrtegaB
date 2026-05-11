@@ -64,9 +64,22 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMnuVendaActionPerformed"/>
               </Events>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMnuVendaproduto">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Venda Produto"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMnuVendaprodutoActionPerformed"/>
+              </Events>
+            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMnuCompra">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Compra"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMnuCompraproduto">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Compra produto"/>
               </Properties>
             </MenuItem>
           </SubComponents>

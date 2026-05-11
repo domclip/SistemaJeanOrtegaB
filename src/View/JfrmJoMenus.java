@@ -39,7 +39,9 @@ public class JfrmJoMenus extends javax.swing.JFrame {
         jMniAutor = new javax.swing.JMenuItem();
         jMnuMovimento = new javax.swing.JMenu();
         jMnuVenda = new javax.swing.JMenuItem();
+        jMnuVendaproduto = new javax.swing.JMenuItem();
         jMnuCompra = new javax.swing.JMenuItem();
+        jMnuCompraproduto = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,8 +75,15 @@ public class JfrmJoMenus extends javax.swing.JFrame {
         jMnuVenda.addActionListener(this::jMnuVendaActionPerformed);
         jMnuMovimento.add(jMnuVenda);
 
+        jMnuVendaproduto.setText("Venda Produto");
+        jMnuVendaproduto.addActionListener(this::jMnuVendaprodutoActionPerformed);
+        jMnuMovimento.add(jMnuVendaproduto);
+
         jMnuCompra.setText("Compra");
         jMnuMovimento.add(jMnuCompra);
+
+        jMnuCompraproduto.setText("Compra produto");
+        jMnuMovimento.add(jMnuCompraproduto);
 
         jMenuBar1.add(jMnuMovimento);
 
@@ -125,6 +134,10 @@ public class JfrmJoMenus extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMniAutorActionPerformed
 
+    private void jMnuVendaprodutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuVendaprodutoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMnuVendaprodutoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -159,7 +172,9 @@ public class JfrmJoMenus extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMniUsuarios;
     private javax.swing.JMenu jMnuCadastro;
     private javax.swing.JMenuItem jMnuCompra;
+    private javax.swing.JMenuItem jMnuCompraproduto;
     private javax.swing.JMenu jMnuMovimento;
     private javax.swing.JMenuItem jMnuVenda;
+    private javax.swing.JMenuItem jMnuVendaproduto;
     // End of variables declaration//GEN-END:variables
 }
