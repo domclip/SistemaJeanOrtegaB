@@ -11,6 +11,17 @@
             <file>file:/C:/Users/jianl/OneDrive/Documentos/NetBeansProjects/SistemaOrtega/src/View/JfrmJoMenus.java</file>
             <file>file:/C:/Users/jianl/OneDrive/Documentos/NetBeansProjects/SistemaOrtega/src/View/JfrmJoLogin.java</file>
             <file>file:/C:/Users/jianl/OneDrive/Documentos/NetBeansProjects/SistemaOrtega/src/View/JDlgVenda.java</file>
+            <file>file:/C:/Users/jianl/OneDrive/Documentos/NetBeansProjects/SistemaOrtega/src/bean/JMpvJoClientes.java</file>
+            <file>file:/C:/Users/jianl/OneDrive/Documentos/NetBeansProjects/SistemaOrtega/src/bean/JMpvJoAutor.java</file>
+            <file>file:/C:/Users/jianl/OneDrive/Documentos/NetBeansProjects/SistemaOrtega/src/bean/JmpvJoFornecedor.java</file>
+            <file>file:/C:/Users/jianl/OneDrive/Documentos/NetBeansProjects/SistemaOrtega/src/bean/JMpvJoLivros.java</file>
+            <file>file:/C:/Users/jianl/OneDrive/Documentos/NetBeansProjects/SistemaOrtega/src/bean/JMpvJoUsuarios.java</file>
+            <file>file:/C:/Users/jianl/OneDrive/Documentos/NetBeansProjects/SistemaOrtega/src/dao/DaoMpvJoUsuarios.java</file>
+            <file>file:/C:/Users/jianl/OneDrive/Documentos/NetBeansProjects/SistemaOrtega/src/dao/DaoJoAbstract.java</file>
+            <file>file:/C:/Users/jianl/OneDrive/Documentos/NetBeansProjects/SistemaOrtega/src/dao/DaoMpvJoAutor.java</file>
+            <file>file:/C:/Users/jianl/OneDrive/Documentos/NetBeansProjects/SistemaOrtega/src/dao/DaoMpvJoClientes.java</file>
+            <file>file:/C:/Users/jianl/OneDrive/Documentos/NetBeansProjects/SistemaOrtega/src/dao/DaoMpvJoFornecedor.java</file>
+            <file>file:/C:/Users/jianl/OneDrive/Documentos/NetBeansProjects/SistemaOrtega/src/dao/DaoMpvJoLivros.java</file>
         </group>
     </open-files>
 </project-private>

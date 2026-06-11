@@ -4,12 +4,15 @@
  */
 package View;
 
+import bean.JMpvJoUsuarios;
+import dao.DaoMpvJoUsuarios;
+
 /**
  *
  * @author jianl
  */
 public class JDlgJoUsuarios extends javax.swing.JDialog {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JDlgJoUsuarios.class.getName());
 
     /**
@@ -19,10 +22,11 @@ public class JDlgJoUsuarios extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
-         setTitle("Cadastro de usuario");
-           habilitar(false);
+        setTitle("Cadastro de usuario");
+        habilitar(false);
     }
-     public void habilitar(boolean valor) {
+
+    public void habilitar(boolean valor) {
         jTxtNome.setEnabled(valor);
         jTxtApelido.setEnabled(valor);
         jFtfCpf.setEnabled(valor);
@@ -30,10 +34,10 @@ public class JDlgJoUsuarios extends javax.swing.JDialog {
         jCboNivel.setEnabled(valor);
         jPwfSenha.setEnabled(valor);
         jChbAtivo.setEnabled(valor);
-       
+
         jBtnCancelar.setEnabled(valor);
         jBtnConfirmar.setEnabled(valor);
-        
+
         jBtnPesquisar.setEnabled(!valor);
         jBtnExcluir.setEnabled(!valor);
         jBtnIncluir.setEnabled(!valor);
@@ -230,12 +234,41 @@ public class JDlgJoUsuarios extends javax.swing.JDialog {
 
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
         // TODO add your handling code here:
-         habilitar(false);
+         JMpvJoUsuarios usuario = new JMpvJoUsuarios();
+
+    usuario.setJO_Nome(jTxtNome.getText());
+    usuario.setJO_Apelido(jTxtApelido.getText());
+    usuario.setJO_Cpf(jFtfCpf.getText());
+    usuario.setJO_Senha(String.valueOf(jPwfSenha.getPassword()));
+    usuario.setJO_Nivel(jCboNivel.getSelectedIndex());
+    usuario.setJO_Ativo(jChbAtivo.isSelected() ? "S" : "N");
+
+    try {
+        java.text.SimpleDateFormat sdf =
+                new java.text.SimpleDateFormat("dd/MM/yyyy");
+
+        java.util.Date data =
+                sdf.parse(jFmtDataNascimento.getText());
+
+        usuario.setJO_DataNascimento(data);
+
+    } catch (Exception e) {
+        javax.swing.JOptionPane.showMessageDialog(
+                this,
+                "Data inválida! Use dd/MM/yyyy"
+        );
+        return;
+    }
+
+    DaoMpvJoUsuarios dao = new DaoMpvJoUsuarios();
+    dao.insert(usuario);
+
+    habilitar(false);
     }//GEN-LAST:event_jBtnConfirmarActionPerformed
 
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
         // TODO add your handling code here:
-         habilitar(false);
+        habilitar(false);
     }//GEN-LAST:event_jBtnCancelarActionPerformed
 
     private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed

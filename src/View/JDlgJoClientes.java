@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
 package View;
-
+import bean.JMpvJoClientes;
+import dao.DaoMpvJoClientes;
 /**
  *
  * @author jianl
@@ -329,7 +330,55 @@ public class JDlgJoClientes extends javax.swing.JDialog {
 
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
         // TODO add your handling code here:
-         habilitar(false);
+         JMpvJoClientes cliente = new JMpvJoClientes();
+
+    cliente.setJoIdClientes(0);
+    cliente.setJoNome(jTxtNome.getText());
+    cliente.setJoCpf(jFmtCpf.getText());
+    cliente.setJoEmail(jTxtEmail.getText());
+    cliente.setJoTelefone(jFmtTelefone.getText());
+    cliente.setJoDataNascimento(null);
+
+    String genero = "";
+
+    if (jRbtnHomem.isSelected()) {
+        genero = "Homem";
+    } else if (jRbtnMulher.isSelected()) {
+        genero = "Mulher";
+    } else if (jRbtnNaobinario.isSelected()) {
+        genero = "Nao binario";
+    }
+
+    cliente.setJoGenero(genero);
+
+    cliente.setJoEndereco(jTxtEndereco.getText());
+    cliente.setJoBairro(jTxtBairro.getText());
+    cliente.setJoCidade(jTxtCidade.getText());
+    cliente.setJoEstado(jTxtEstado.getText());
+    cliente.setJoCep(jFmtCep.getText());
+    cliente.setJoDataCadastro(null);
+
+    double valorCompras = 0;
+
+    if (!jFmtValorcompras.getText().trim().equals("")) {
+        valorCompras = Double.parseDouble(
+                jFmtValorcompras.getText().replace(",", ".")
+        );
+    }
+
+    cliente.setJoTotalCompras(valorCompras);
+    cliente.setJoStatusCliente("A");
+
+    DaoMpvJoClientes dao = new DaoMpvJoClientes();
+
+    dao.insert(cliente);
+
+    javax.swing.JOptionPane.showMessageDialog(
+            null,
+            "Cliente salvo com sucesso!"
+    );
+
+    habilitar(false);
     }//GEN-LAST:event_jBtnConfirmarActionPerformed
 
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed

@@ -4,12 +4,15 @@
  */
 package View;
 
+import bean.JMpvJoAutor;
+import dao.DaoMpvJoAutor;
+
 /**
  *
  * @author jianl
  */
 public class JDlgJoAutor extends javax.swing.JDialog {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JDlgJoAutor.class.getName());
 
     /**
@@ -18,22 +21,23 @@ public class JDlgJoAutor extends javax.swing.JDialog {
     public JDlgJoAutor(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-         setLocationRelativeTo(null);
-         setTitle("Cadastro de autor");
-           habilitar(false);
-        
+        setLocationRelativeTo(null);
+        setTitle("Cadastro de autor");
+        habilitar(false);
+
     }
-     public void habilitar(boolean valor) {
-        jTxtNomeautor.setEnabled(valor);    
+
+    public void habilitar(boolean valor) {
+        jTxtNomeautor.setEnabled(valor);
         jFmtDatanascimento.setEnabled(valor);
         jTxtNomeartistico.setEnabled(valor);
         jTxtNacionalidade.setEnabled(valor);
         jTxtGeneros.setEnabled(valor);
         jTxtBiografia.setEnabled(valor);
-       
+
         jBtnCancelar.setEnabled(valor);
         jBtnConfirmar.setEnabled(valor);
-        
+
         jBtnPesquisar.setEnabled(!valor);
         jBtnExcluir.setEnabled(!valor);
         jBtnIncluir.setEnabled(!valor);
@@ -199,17 +203,37 @@ public class JDlgJoAutor extends javax.swing.JDialog {
 
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
         // TODO add your handling code here:
-         habilitar(false);
+
+        JMpvJoAutor autor = new JMpvJoAutor();
+
+        autor.setJo_idautor(0);
+        autor.setJo_nomeautor(jTxtNomeautor.getText());
+        autor.setJo_nomeartistico(jTxtNomeartistico.getText());
+        autor.setJo_datanasc(null);
+        autor.setJo_nacionalidade(jTxtNacionalidade.getText());
+        autor.setJo_generosliterarios(jTxtGeneros.getText());
+        autor.setJo_biografiacurta(jTxtBiografia.getText());
+
+        DaoMpvJoAutor dao = new DaoMpvJoAutor();
+
+        dao.insert(autor);
+
+        javax.swing.JOptionPane.showMessageDialog(
+                null,
+                "SALVO"
+        );
+        habilitar(false);
+
     }//GEN-LAST:event_jBtnConfirmarActionPerformed
 
     private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
         // TODO add your handling code here:
-          habilitar(true);
+        habilitar(true);
     }//GEN-LAST:event_jBtnIncluirActionPerformed
 
     private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
         // TODO add your handling code here:
-          habilitar(true);
+        habilitar(true);
     }//GEN-LAST:event_jBtnAlterarActionPerformed
 
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
@@ -218,7 +242,7 @@ public class JDlgJoAutor extends javax.swing.JDialog {
 
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
         // TODO add your handling code here:
-         habilitar(false);
+        habilitar(false);
     }//GEN-LAST:event_jBtnCancelarActionPerformed
 
     private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
